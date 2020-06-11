@@ -41,7 +41,7 @@ $preference = new MercadoPago\Preference();
 	);
 	*/
 	//https://www.mercadopago.com.ar/developers/es/guides/payments/web-payment-checkout/advanced-integration/
-	$payer->address = (object) array(
+	$payer->address = array(
 	  "street_name" => "False",
 	  "street_number" => 123,
 	  "zip_code" => "1111"
