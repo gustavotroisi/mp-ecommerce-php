@@ -49,12 +49,12 @@ $preference = new MercadoPago\Preference();
 	$address->zip_code = "1111";
 	$payer->address = $address;
 	*/
-	$preference->payer->phone->area_code = "11";
-	$preference->payer->phone->number = "22223333";
+	$payer->phone->area_code = "11";
+	$payer->phone->number = "22223333";
 	
-	$preference->payer->address->street_name = "False";
-	$preference->payer->address->street_number = "123";
-	$preference->payer->address->zip_code = "1111";
+	$payer->address->street_name = "False";
+	$payer->address->street_number = "123";
+	$payer->address->zip_code = "1111";
 	
 	/*
 	$payer->phone = array(
