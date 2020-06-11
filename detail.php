@@ -98,11 +98,11 @@ $preference->payment_methods = array(
 
 //Integrator id
 MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
-
+/*
 echo '<pre>';
 print_r($preference);
 echo '</pre>';
-
+*/
 $preference->save();
 	
 	
