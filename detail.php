@@ -14,7 +14,7 @@ $preference = new MercadoPago\Preference();
 	$item->id = "1234";
 	$item->title = $_POST['title'];
 	$item->description = "Dispositivo móvil de Tienda e-commerce";
-	$item->picture_url = $_POST['img'];
+	$item->picture_url = "http://".$_SERVER['HTTP_HOST'].substr($_POST['img'],1,strlen($_POST['img']));
 	$item->quantity = 1; //$_POST['unit'] ;
 	$item->unit_price = $_POST['price'];
 	$preference->items = array($item);
@@ -45,13 +45,13 @@ $preference = new MercadoPago\Preference();
 	  "street_number" => 123,
 	  "zip_code" => "1111"
 	);
-
+	$preference->payer = $payer;
 
 //Back URLs
 	$preference->back_urls = array(
-		"success" => $_SERVER['REQUEST_URI']."/success",
-		"failure" => $_SERVER['REQUEST_URI']."/failure",
-		"pending" => $_SERVER['REQUEST_URI']."/pending"
+		"success" => "http://".$_SERVER['HTTP_HOST']."/success",
+		"failure" => "http://".$_SERVER['HTTP_HOST']."/failure",
+		"pending" => "http://".$_SERVER['HTTP_HOST']."/pending"
 	);
 	$preference->auto_return = "approved";
 
@@ -74,7 +74,6 @@ $preference->payment_methods = array(
 
 //Integrator id
 MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
-
 
 $preference->save();
 	
