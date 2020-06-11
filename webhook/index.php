@@ -1,4 +1,5 @@
 <?php
+/*
 header('Content-Type: application/json');
 
 $id = $_GET["id"];
@@ -11,5 +12,9 @@ $apiResponse = curl_exec($cURLConnection);
 curl_close($cURLConnection);
 
 echo $apiResponse;
+*/
 
+$data = file_get_contents("php://input");
+file_put_contents("php://stderr", "hello, this is a test!\n");
+file_put_contents("php://stderr", $data);
 ?>
