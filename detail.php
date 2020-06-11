@@ -30,7 +30,7 @@ $preference = new MercadoPago\Preference();
 	$payer->surname = "Landa";
 	$payer->email = "test_user_63274575@testuser.com";
 	//$payer->date_created = "2020-06-02T12:58:41.425-04:00";
-	$payer->phone = array(
+	$payer->phone = (object) array(
 	  "area_code" => "11",
 	  "number" => "22223333"
 	);
@@ -40,7 +40,8 @@ $preference = new MercadoPago\Preference();
 	  "number" => "12345678"
 	);
 	*/
-	$payer->address = array(
+	//https://www.mercadopago.com.ar/developers/es/guides/payments/web-payment-checkout/advanced-integration/
+	$payer->address = (object) array(
 	  "street_name" => "False",
 	  "street_number" => 123,
 	  "zip_code" => "1111"
@@ -54,6 +55,11 @@ $preference = new MercadoPago\Preference();
 		"pending" => "http://".$_SERVER['HTTP_HOST']."/pending"
 	);
 	$preference->auto_return = "approved";
+
+//Notification URL
+$preference->notification_url = "http://".$_SERVER['HTTP_HOST']."/webhook";
+
+
 
 
 /*
