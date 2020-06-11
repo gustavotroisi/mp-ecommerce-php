@@ -36,26 +36,30 @@ $preference = new MercadoPago\Preference();
 	
 	//$payer->phone["area_code"] = "11";
 	//$payer->phone["number"]  = "22223333";
-	/*
+	
+	
 	$phone=new stdClass();
 	$phone->area_code = "11";
 	$phone->number = "22223333";
 	$payer->phone = $phone;
-	*/
-	/*
+	
+	
 	$address=new stdClass();
+	$address->id = false;
 	$address->street_name = "False";
 	$address->street_number = "123";
 	$address->zip_code = "1111";
 	$payer->address = $address;
-	*/
+	
+	
+	/*
 	$payer->phone->area_code = "11";
 	$payer->phone->number = "22223333";
 	
 	$payer->address->street_name = "False";
 	$payer->address->street_number = "123";
 	$payer->address->zip_code = "1111";
-	
+	*/
 	/*
 	$payer->phone = array(
 	  "area_code" => "11",
