@@ -31,8 +31,11 @@ $preference = new MercadoPago\Preference();
 	$payer->email = "test_user_63274575@testuser.com";
 	$payer->date_created = "2018-06-02T12:58:41.425-04:00";
 	
-	$payer->phone->area_code = "11";
-	$payer->phone->number  = "22223333";
+	//$payer->phone->area_code = "11";
+	//$payer->phone->number  = "22223333";
+	
+	$payer->phone["area_code"] = "11";
+	$payer->phone["number"]  = "22223333";
 	
 	/*
 	$payer->phone = array(
