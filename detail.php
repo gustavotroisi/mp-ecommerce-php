@@ -29,11 +29,17 @@ $preference = new MercadoPago\Preference();
 	$payer->name = "Lalo";
 	$payer->surname = "Landa";
 	$payer->email = "test_user_63274575@testuser.com";
-	//$payer->date_created = "2020-06-02T12:58:41.425-04:00";
-	$payer->phone = (object) array(
+	$payer->date_created = "2018-06-02T12:58:41.425-04:00";
+	
+	$payer->phone->area_code = "11";
+	$payer->phone->number  = "22223333";
+	
+	/*
+	$payer->phone = array(
 	  "area_code" => "11",
 	  "number" => "22223333"
 	);
+	*/
 	/*
 	$payer->identification = array(
 	  "type" => "DNI",
@@ -41,11 +47,19 @@ $preference = new MercadoPago\Preference();
 	);
 	*/
 	//https://www.mercadopago.com.ar/developers/es/guides/payments/web-payment-checkout/advanced-integration/
+	/*
 	$payer->address = array(
 	  "street_name" => "False",
 	  "street_number" => 123,
 	  "zip_code" => "1111"
 	);
+	*/
+	
+	$payer->address->street_name = "False";
+	$payer->address->street_number = 123;
+	$payer->address->zip_code = "1111";
+	
+	
 	$preference->payer = $payer;
 
 //Back URLs
