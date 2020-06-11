@@ -1,28 +1,15 @@
 <?php
-//SDK de Mercado Pago
-//require __DIR__  . '/vendor/autoload.php';
-require '../vendor/autoload.php';
+header('Content-Type: application/json');
 
+$id = $_GET["id"];
+$token = 'APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398';
 
-    MercadoPago\SDK::setAccessToken("APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398");
+$cURLConnection = curl_init('https://api.mercadopago.com/v1/payments/'.$id.'?access_token='.$token);
+curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 
-    switch($_POST["type"]) {
-        case "payment":
-            $payment = MercadoPago\Payment.find_by_id($_POST["data.id"]);
-            break;
-        case "plan":
-            $plan = MercadoPago\Plan.find_by_id($_POST["id"]);
-            break;
-        case "subscription":
-            $plan = MercadoPago\Subscription.find_by_id($_POST["id"]);
-            break;
-        case "invoice":
-            $plan = MercadoPago\Invoice.find_by_id($_POST["id"]);
-            break;
-    }
+$apiResponse = curl_exec($cURLConnection);
+curl_close($cURLConnection);
 
-//HEROKU LOG
-//https://devcenter.heroku.com/articles/logging
-//error_log(json_encode($payment));
-//error_log($payment);
-echo $payment;
+echo $apiResponse;
+
+?>
