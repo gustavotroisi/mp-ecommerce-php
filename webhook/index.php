@@ -1,6 +1,7 @@
 <?php
 //SDK de Mercado Pago
 //require __DIR__  . '/vendor/autoload.php';
+
 require '../vendor/autoload.php';
 
 
@@ -22,5 +23,6 @@ require '../vendor/autoload.php';
     }
 
 //HEROKU LOG
-https://devcenter.heroku.com/articles/logging
-System.out.println(json_encode($payment));
+//https://devcenter.heroku.com/articles/logging
+//error_log(json_encode($payment));
+error_log($payment);

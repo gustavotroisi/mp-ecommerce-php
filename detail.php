@@ -34,15 +34,16 @@ $preference = new MercadoPago\Preference();
 	//$payer->phone->area_code = "11";
 	//$payer->phone->number  = "22223333";
 	
-	$payer->phone["area_code"] = "11";
-	$payer->phone["number"]  = "22223333";
+	//$payer->phone["area_code"] = "11";
+	//$payer->phone["number"]  = "22223333";
 	
-	/*
+	
 	$payer->phone = array(
 	  "area_code" => "11",
 	  "number" => "22223333"
 	);
-	*/
+	
+	
 	/*
 	$payer->identification = array(
 	  "type" => "DNI",
@@ -50,18 +51,18 @@ $preference = new MercadoPago\Preference();
 	);
 	*/
 	//https://www.mercadopago.com.ar/developers/es/guides/payments/web-payment-checkout/advanced-integration/
-	/*
+	
 	$payer->address = array(
 	  "street_name" => "False",
 	  "street_number" => 123,
 	  "zip_code" => "1111"
 	);
-	*/
 	
+	/*
 	$payer->address->street_name = "False";
 	$payer->address->street_number = 123;
 	$payer->address->zip_code = "1111";
-	
+	*/
 	
 	$preference->payer = $payer;
 
@@ -97,6 +98,10 @@ $preference->payment_methods = array(
 
 //Integrator id
 MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
+
+echo '<pre>';
+print_r($preference);
+echo '</pre>';
 
 $preference->save();
 	
