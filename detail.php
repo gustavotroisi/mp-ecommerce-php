@@ -29,7 +29,7 @@ $preference = new MercadoPago\Preference();
 	$payer->name = "Lalo";
 	$payer->surname = "Landa";
 	$payer->email = "test_user_63274575@testuser.com";
-	$payer->date_created = "2018-06-02T12:58:41.425-04:00";
+	//$payer->date_created = "2018-06-02T12:58:41.425-04:00";
 	
 	//$payer->phone->area_code = "11";
 	//$payer->phone->number  = "22223333";
@@ -37,11 +37,31 @@ $preference = new MercadoPago\Preference();
 	//$payer->phone["area_code"] = "11";
 	//$payer->phone["number"]  = "22223333";
 	
+	$phone=new stdClass();
+	$phone->area_code = "11";
+	$phone->number = "22223333";
+	$player->phone = $phone;
 	
+	$address=new stdClass();
+	$address->street_name = "False";
+	$address->street_number = "123";
+	$address->zip_code = "1111";
+	$player->address = $address;
+	
+	
+	/*
 	$payer->phone = array(
 	  "area_code" => "11",
 	  "number" => "22223333"
 	);
+	$payer->address = array(
+	  "street_name" => "False",
+	  "street_number" => 123,
+	  "zip_code" => "1111"
+	);
+	*/
+	
+	
 	
 	
 	/*
@@ -51,12 +71,6 @@ $preference = new MercadoPago\Preference();
 	);
 	*/
 	//https://www.mercadopago.com.ar/developers/es/guides/payments/web-payment-checkout/advanced-integration/
-	
-	$payer->address = array(
-	  "street_name" => "False",
-	  "street_number" => 123,
-	  "zip_code" => "1111"
-	);
 	
 	/*
 	$payer->address->street_name = "False";
