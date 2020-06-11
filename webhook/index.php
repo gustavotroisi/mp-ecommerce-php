@@ -1,7 +1,6 @@
 <?php
 //SDK de Mercado Pago
 //require __DIR__  . '/vendor/autoload.php';
-
 require '../vendor/autoload.php';
 
 
@@ -9,7 +8,7 @@ require '../vendor/autoload.php';
 
     switch($_POST["type"]) {
         case "payment":
-            $payment = MercadoPago\Payment.find_by_id($_POST["id"]);
+            $payment = MercadoPago\Payment.find_by_id($_POST["data.id"]);
             break;
         case "plan":
             $plan = MercadoPago\Plan.find_by_id($_POST["id"]);
@@ -25,4 +24,5 @@ require '../vendor/autoload.php';
 //HEROKU LOG
 //https://devcenter.heroku.com/articles/logging
 //error_log(json_encode($payment));
-error_log($payment);
+//error_log($payment);
+echo $payment;

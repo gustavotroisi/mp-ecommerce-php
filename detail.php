@@ -45,8 +45,9 @@ $preference = new MercadoPago\Preference();
 	
 	
 	$address=new stdClass();
-	$address->id = false;
-	$address->street_name = "False";
+	//$address->id = false;
+	//$address->street_name = "False";
+	$address->street_name = false;
 	$address->street_number = "123";
 	$address->zip_code = "1111";
 	$payer->address = $address;
