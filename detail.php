@@ -28,34 +28,24 @@ $preference = new MercadoPago\Preference();
 	$payer = new MercadoPago\Payer();
 	$payer->name = "Lalo";
 	$payer->surname = "Landa";
-	/*
-	$payer->first_name
-	$payer->last_name
-	*/
 	$payer->email = "test_user_63274575@testuser.com";
-	//$payer->date_created = "2018-06-02T12:58:41.425-04:00";
-	
-	//$payer->phone->area_code = "11";
-	//$payer->phone->number  = "22223333";
-	
-	//$payer->phone["area_code"] = "11";
-	//$payer->phone["number"]  = "22223333";
-	
-	
 	$phone=new stdClass();
-	$phone->area_code = "11";
-	$phone->number = "22223333";
+	$phone->area_code = 11;
+	$phone->number = 22223333;
 	$payer->phone = $phone;
-	
-	
 	$address=new stdClass();
-	//$address->id = false;
 	$address->street_name = "False";
 	$address->street_number = 123;
 	$address->zip_code = "1111";
 	$payer->address = $address;
-	
-	
+	$preference->payer = $payer;
+
+
+
+
+
+
+
 	/*
 	$payer->phone->area_code = "11";
 	$payer->phone->number = "22223333";
@@ -93,8 +83,11 @@ $preference = new MercadoPago\Preference();
 	$payer->address->zip_code = "1111";
 	*/
 	
-	$preference->payer = $payer;
-
+	
+	
+	
+	
+	
 //Back URLs
 	$preference->back_urls = array(
 		"success" => "http://".$_SERVER['HTTP_HOST']."/success",
