@@ -40,13 +40,13 @@ $preference = new MercadoPago\Preference();
 	$phone=new stdClass();
 	$phone->area_code = "11";
 	$phone->number = "22223333";
-	$player->phone = $phone;
+	$payer->phone = $phone;
 	
 	$address=new stdClass();
 	$address->street_name = "False";
 	$address->street_number = "123";
 	$address->zip_code = "1111";
-	$player->address = $address;
+	$payer->address = $address;
 	
 	
 	/*
