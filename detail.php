@@ -29,6 +29,23 @@ $preference = new MercadoPago\Preference();
 	$payer->name = "Lalo";
 	$payer->surname = "Landa";
 	$payer->email = "test_user_63274575@testuser.com";
+	
+	$payer->phone = array(
+	  "area_code" => "11",
+	  "number" => "22223333"
+	);
+	$payer->address = array(
+	  "street_name" => "False",
+	  "street_number" => "123",
+	  "zip_code" => "1111"
+	);
+	
+	$preference->payer = $payer;
+
+
+
+	/*
+	
 	$phone=new stdClass();
 	$phone->area_code = 11;
 	$phone->number = 22223333;
@@ -38,11 +55,8 @@ $preference = new MercadoPago\Preference();
 	$address->street_number = 123;
 	$address->zip_code = "1111";
 	$payer->address = $address;
-	$preference->payer = $payer;
-
-
-
-
+	
+	*/
 
 
 
@@ -55,15 +69,7 @@ $preference = new MercadoPago\Preference();
 	$payer->address->zip_code = "1111";
 	*/
 	/*
-	$payer->phone = array(
-	  "area_code" => "11",
-	  "number" => "22223333"
-	);
-	$payer->address = array(
-	  "street_name" => "False",
-	  "street_number" => 123,
-	  "zip_code" => "1111"
-	);
+	
 	*/
 	
 	
